@@ -14,7 +14,7 @@ def unzip(targetDirectory):
             if filename.endswith('.zip'):
                 targetFile = os.path.join(root, filename)
                 with zipfile.ZipFile(targetFile, 'r') as zipRef:
-                    zipRef.extractall(targetFile[:-len('.zip')])
+                    zipRef.extractall(root)
 
 if __name__ == '__main__':
     import argparse
