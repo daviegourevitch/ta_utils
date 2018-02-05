@@ -11,6 +11,8 @@ to CULearn working.
 
 import os
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
 try:
     import pyperclip
 except ModuleNotFoundError as error:
@@ -29,7 +31,7 @@ def fetchMarks(assignmentDirectory):
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('assignmentDirectory', type=str,
+    parser.add_argument('assignmentDirectory', type=str, nargs='?',
         help='path to the directory containing all of the marked assignments')
     args = parser.parse_args()
-    fetchMarks(args.assignmentDirectory)
+    fetchMarks(args.assignmentDirectory or dir_path)
