@@ -32,6 +32,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('assignmentDirectory', type=str, nargs='?',
+        default=dir_path,
         help='path to the directory containing all of the marked assignments')
     args = parser.parse_args()
-    fetchMarks(args.assignmentDirectory or dir_path)
+    fetchMarks(args.assignmentDirectory)

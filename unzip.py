@@ -22,6 +22,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('targetDirectory', type=str, nargs='?',
+        default=dir_path,
         help='path to the directory containing all of the zip files')
     args = parser.parse_args()
-    unzip(args.targetDirectory or dir_path)
+    unzip(args.targetDirectory)
