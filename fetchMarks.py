@@ -21,7 +21,7 @@ except ModuleNotFoundError as error:
     exit()
 
 def fetchMarks(assignmentDirectory):
-    for root, dirs, files in os.walk(assignmentDirectory):
+    for root, dirs, files in sorted(os.walk(assignmentDirectory)):
         if 'mark' in files:
             print(root, end='')
             with open(os.path.join(root, 'mark'), 'r') as markFile:
