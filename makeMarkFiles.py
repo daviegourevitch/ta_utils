@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 '''
-unzips all of the zip files under targetDirectory into a directory with
-the same name as the zip file, in the same directory as the zip file.
+Makes a mark file for every folder under the targetDirectory (i.e. makes
+one for each student). (Optional) It takes a template file as an argument 
+using --templateFile and a name for each file using --markFileName.
 '''
 
 import os
